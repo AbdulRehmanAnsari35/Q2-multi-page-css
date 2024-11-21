@@ -1,42 +1,284 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
+*{
+  margin:0;
   padding: 0;
-  margin: 0;
+  box-sizing: border-box;
+}
+body{
+    font-family: Arial,  sans-serif;
+    background-color:f4f4f4e9b ;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+h1,h2,h3 {
+    font-weight: bold;
+    
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/*header style*/
+.header{
+    background-color:black;
+    color:white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header.logo{
+    font-size: 24px;
+    color: white;
+}
+.header nav{
+    display: flex;
+    gap: 40px;
+}
+.header nav a{
+    color: white;
+    font-weight: bold;
+}
+.header nav a:hover{
+    text-decoration: underline;
+}
+/* footer*/
+footer{
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+footer p{
+    margin:0;
+}
+/* home page  style*/
+
+.Hero{
+   background-size: cover;
+  background-position: center; 
+   height: 100vh;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   text-align: center;
+   color: white;
+  padding-left: 60px;
+}
+.Hero h1{
+    font-size: 58px;
+    color: #000;
+    text-shadow: 2px,2px,5px rgba(0, 0, 0, 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.Hero p{
+    font-size:30px;
+    margin-top: 10px;
 }
+.Hero button{
+    margin-top:20px;
+    padding: 10px 20px;
+    background-color: #5b65f7;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+   cursor: pointer;
+    transition:background-color 0.3s ease;
+}
+.Hero button:hover {
+    background-color: #0d36ee; /* Adds hover effect with a new background color */
+    transition: background-color 0.3s ease; /* Smooth transition for better UI experience */
+}
+
+
+
+/*about page style*/
+
+.about{
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    font-size: larger;
+
+}
+
+.about-content{
+    max-width: 400;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.about-content p{
+    padding: 5px;
+}
+
+/* Laptop styling*/
+.laptop{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    margin: 50px;
+}
+
+.lp-card{
+    width: 100% ;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+ .lp-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.lp-card h3{
+    margin-top: 10px;
+}
+.lp-card p{
+    color: #555;
+    font-size:14px ;
+}
+.lp-card .price{
+    font-size: 20px;
+    font-weight: bold;
+    color: #0d36ee;
+}
+.lp-card button{
+    margin-top: 10px;
+    padding:10px;
+    background-color: #0d36ee;
+    color:white ;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:background-color 0.3s ease ;
+}
+
+.lp-card button:hover{
+   background-color: #65a8fa;
+}
+.lp-card img{
+   width: 250px; 
+   height: auto;
+   border-radius: 10px;
+ transition: transform 0.3s ease;
+}
+.lp-card:hover img{
+    transform:scale(1.1) ;
+}
+
+/* contact style */
+
+.contact-form{
+    max-width: 600px;
+    margin:50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.contact-form button{
+    padding: 10px 20px;
+    background-color: #0d36ee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-form button:hover{
+    background-color: #0070f3;
+}
+
+/* fade in animation */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* responsive style */
+
+@media (max-width: 768px) {
+     .header {
+        flex-direction: column;
+        text-align: center;
+     }
+     .header .logo {
+        margin-bottom: 10px;
+     }
+     .header nav {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+     }
+
+     .hero {
+        height: 70vh;
+        padding: 20px;
+        text-align: center;
+     }
+
+     .hero h1 {
+        font-size: 36px;
+     }
+     .hero p {
+        font-size: 18px;
+     }
+     .hero button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+     }
+
+     .laptop {
+        grid-template-columns: 1fr;
+        margin: 20px;
+     }
+
+     .about {
+        padding: 40px 20px;
+        height: auto;
+     }
+     .about-content {
+        width: 100%;
+        padding: 20px;
+     }
+     .contact-form {
+        margin: 20px;
+        padding: 20px;
+     }
+}
+
