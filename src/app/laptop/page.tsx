@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 const laptop = () => {
 
@@ -15,11 +16,17 @@ const laptop = () => {
     <div className='laptop'>
       {lpdata.map((laptop) =>(
        <div key={laptop.id} className='lp-card'>
-        <img src={laptop.image} alt={laptop.name} />
+        {/* use image component for optimization*/}
+        <Image 
+              src={laptop.image} 
+              alt={laptop.name} 
+              width={300} // Set a width for the image
+              height={200} // Set a height for the image
+            />
         <h3>{laptop.name}</h3>
         <p>{laptop.description}</p>
         <div className='price'>${laptop.price}</div>
-        <button>Add to card</button>
+        <button>Add to cart</button>
        </div> 
       ))}
       </div>  
